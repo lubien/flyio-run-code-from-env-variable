@@ -18,10 +18,10 @@ ENV ERL_AFLAGS "-proto_dist inet6_tcp"
 WORKDIR "/app"
 
 # Copy our files over
-COPY bug.exs /app
+COPY run.sh /app
 
 # install hex + rebar if you plan on using Mix.install
 RUN mix local.hex --force && \
     mix local.rebar --force
 
-CMD elixir /app/bug.exs
+CMD /app/run.sh
