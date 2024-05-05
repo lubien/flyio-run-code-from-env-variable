@@ -2,7 +2,8 @@ Application.put_env(:sample, Example.Endpoint,
   http: [ip: {0, 0, 0, 0}, port: 4000],
   server: true,
   live_view: [signing_salt: "aaaaaaaa"],
-  secret_key_base: String.duplicate("a", 64)
+  secret_key_base: String.duplicate("a", 64),
+  check_origin: false
 )
 
 Mix.install([
